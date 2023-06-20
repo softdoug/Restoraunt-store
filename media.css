@@ -1,0 +1,66 @@
+    @media screen and (max-width: 768px) {
+        .grid-container {
+        grid-template-columns: repeat(2, 6fr);
+        };
+    }
+
+    @media screen and (max-width: 320px) {
+        .grid-container {
+        grid-template-columns: repeat(1, 12fr);
+        };
+    }
+    @media screen and (max-width: 320px) {
+        #header .basket {
+        display: none;
+            
+        };
+        }
+
+    @media screen and (max-width: 320px) {
+        .footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-direction: column;
+        };
+    }
+
+    @media screen and (max-width: 320px) {
+        .f1-a, .f2-a, .f2-b, .f2-c, .f3-a, .f4-a, .f4-b, .f4-c {
+        margin-top: 7px;
+        
+        };
+    }
+    @media screen and (max-width: 320px) {
+        .f3-a {
+            margin: 10px 5px;
+            align-content: center;
+            
+        };
+    }
+    @media screen and (max-width: 320px) {
+        .f3-a img {
+            width: 70px;
+            height: 30px;
+            margin: 10px 5px;
+            padding-bottom: 10px;
+            
+        };
+    }
+    @media screen and (max-width: 320px) {
+        .strelka {
+            position: absolute;
+            bottom: 1px;
+            right: 1px;                 
+         };
+    }
+    @media screen and (max-width: 768px) {
+        .strelka img {
+            width: 55%;
+        };
+    }
+    @media screen and (max-width: 320px) {
+        .strelka img {
+            width: 40%;
+        };
+    }
