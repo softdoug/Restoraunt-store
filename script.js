@@ -1,7 +1,9 @@
 class Restoraunt {
-    constructor(restName, restKitchen) {
+    constructor(restName, restKitchen, delivTime) {
         this.restName = restName;
         this.restKitchen = restKitchen;
+        this.img = `${restName}.jpg`;
+        this.delivTime = this.delivTime;
     }
     
 }
@@ -16,4 +18,27 @@ for (let i = 0; i < rests.length; i++) {
 
 }
 
-console.log(allRest)
+const filter = document.querySelector('#filter')
+const container = document.querySelector('.grid-container')
+
+filter.addEventListener('input', (event) => {
+    console.log('inp')
+    // let value = event.target.value.toLowerCase()
+    // const filterdRests = allRest.filter((rest) => {
+    //     return rest.restName.toLowerCase().includes(value)
+    // })
+    // render(filterdRests)
+})
+
+function render(rest) {
+    container.innerHTML = `
+    div class="store-card">
+            <img src="img/${rest.img}">
+            <h5 class="rest-name">${rest.restName}</h5>
+            <p class="kitchen">${restKitchen}</p>
+            <p>25-35 мин</p>
+        </div>
+    `
+}
+
+console.log(container)
