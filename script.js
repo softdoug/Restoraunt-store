@@ -1,20 +1,24 @@
 class Restoraunt {
-    constructor(restName, restKitchen, delivTime) {
+    constructor(restName, restKitchen, delivTime, imgSrc) {
         this.restName = restName;
         this.restKitchen = restKitchen;
-        this.img = `${restName}.jpg`;
-        this.delivTime = this.delivTime;
+        this.img = imgSrc;
+        this.delivTime = delivTime;
     }
     
 }
 
 const allRest = []
-const rests = document.getElementsByClassName('rest-name')
-const kitchens = Array.prototype.slice.call(document.getElementsByClassName('kitchen'))
+const rests = document.querySelectorAll('.rest-name')
+const kitchens = Array.prototype.slice.call(document.querySelectorAll('.kitchen'))
+const delivTimers = document.querySelectorAll('.deliv-time')
+const imagesSrc = document.querySelectorAll('.img-src')
 
 for (let i = 0; i < rests.length; i++) {
     allRest[i] = new Restoraunt(rests[i].innerHTML.replaceAll('•', '').replaceAll('₽', '').trim(),
-     kitchens[i].innerHTML.replaceAll('•', '').replaceAll('₽', '').trim())
+     kitchens[i].innerHTML.replaceAll('•', '').replaceAll('₽', '').trim(), 
+     delivTimers[i].innerHTML,
+     imagesSrc[i].src)
 
 }
 
@@ -26,23 +30,23 @@ filter.addEventListener('input', (event) => {
     const filtredRests = allRest.filter(rest => {
         return  rest.restName.toLowerCase().includes(value)
     })
-    console.log(filtredRests[0].restName);
     render(filtredRests)
 })
 
 function render(rest) {
     container.innerHTML = ''
-    for (key in rest) {
-        console.log(rest[key].restName);
-        container.innerHTML += `
-        div class="store-card">
-                <img src="#">
+    if (rest.length === 0) {
+        container.innerHTML = 'не найдены по заданному поиску'
+    } else {
+        for (key in rest) {
+            container.innerHTML += `
+            <div class="store-card">
+                <img class="img-src" src="${rest[key].img}">
                 <h5 class="rest-name">${rest[key].restName}</h5>
                 <p class="kitchen">${rest[key].restKitchen}</p>
-                <p>25-35 мин</p>
+                <p class="deliv-time">${rest[key].delivTime}</p>
             </div>
-        `
+            `
+        }
     }
 }
-
-// console.log(container)
