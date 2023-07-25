@@ -5,7 +5,6 @@ class Restoraunt {
         this.img = imgSrc;
         this.delivTime = delivTime;
     }
-    
 }
 
 const allRest = []
@@ -19,7 +18,6 @@ for (let i = 0; i < rests.length; i++) {
      kitchens[i].innerHTML.replaceAll('•', '').replaceAll('₽', '').trim(), 
      delivTimers[i].innerHTML,
      imagesSrc[i].src)
-
 }
 
 const filter = document.querySelector('#filter')
@@ -30,23 +28,31 @@ filter.addEventListener('input', (event) => {
     const filtredRests = allRest.filter(rest => {
         return  rest.restName.toLowerCase().includes(value)
     })
-    render(filtredRests)
+    const filtredKitchens = allRest.filter(rest => {
+        return  rest.restKitchen.toLowerCase().includes(value)
+    })
+    render(filtredRests, filtredKitchens)
 })
 
-function render(rest) {
+function render(nameOfRestoraunt, kitchenOfRestaraunt) {
     container.innerHTML = ''
-    if (rest.length === 0) {
-        container.innerHTML = 'не найдены по заданному поиску'
+    if (nameOfRestoraunt.length === 0 && kitchenOfRestaraunt.length === 0) {
+        container.innerHTML = 'не найдены по заданным параметрам'
     } else {
-        for (key in rest) {
-            container.innerHTML += `
-            <section class="store-card">
-                <img class="img-src" src="${rest[key].img}">
-                <h5 class="rest-name">${rest[key].restName}</h5>
-                <p class="kitchen">${rest[key].restKitchen}</p>
-                <p class="deliv-time">${rest[key].delivTime}</p>
-            </section>
-            `
-        }
+        toHTML(nameOfRestoraunt)
+        toHTML(kitchenOfRestaraunt)
+    }
+}
+
+function toHTML(category) {
+    for (key in category) {
+        container.innerHTML += `
+        <section class="store-card">
+            <img class="img-src" src="${category[key].img}">
+            <h5 class="rest-name">${category[key].restName}</h5>
+            <p class="kitchen">${category[key].restKitchen}</p>
+            <p class="deliv-time">${category[key].delivTime}</p>
+        </section>
+        `
     }
 }

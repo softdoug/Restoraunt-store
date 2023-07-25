@@ -16,7 +16,7 @@
     margin-left: 5%;
   }
   #header span {
-      color: #57AD56;
+    color: #57AD56;
   }
   .login {
     width: 78px;
@@ -78,8 +78,8 @@
       display: grid;
       grid-template-columns: repeat(3, 4fr);
       margin: 0 auto;
-      margin-top: 1em;    
       grid-gap: 16px;
+      padding-top: 2em;
   }
   .store-card {
       display: grid;
@@ -122,12 +122,9 @@
   }
   .f1-a, .f2-a, .f2-b, .f2-c, .f3-a, .f4-a, .f4-b, .f4-c {
       display: flex;
-      
-        
   }
   .f1-a {
       align-items: center;
-      
   }
   .f2-a, .f2-b, .f2-c {
       flex-direction: column;
