@@ -40,12 +40,12 @@ function render(rest) {
     } else {
         for (key in rest) {
             container.innerHTML += `
-            <div class="store-card">
+            <section class="store-card">
                 <img class="img-src" src="${rest[key].img}">
                 <h5 class="rest-name">${rest[key].restName}</h5>
                 <p class="kitchen">${rest[key].restKitchen}</p>
                 <p class="deliv-time">${rest[key].delivTime}</p>
-            </div>
+            </section>
             `
         }
     }

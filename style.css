@@ -36,10 +36,9 @@
     align-items: center;
     background-color: #fff;
     border: none;
-    
-}
-  .container {
-      margin: 0 5%;
+  }
+.container {
+      margin: 0 5% 3em 5%;
   }
   input {
       margin-top: 1em;
@@ -74,7 +73,6 @@
   }
   .parent .hdr {
       font-size: 22px;
-      margin-top: 3em;
   }
   .grid-container {
       display: grid;
@@ -136,27 +134,21 @@
       justify-content: center;
       gap: 20px;
       font-size: 13px;
-     
-      
   }
   .footer a:link {
     text-decoration: none;
   }
   .f3-a {
       justify-content: center;
-     
-      
   }
   .f3-a a, .f3-a img {
     width: 120px;
     height: 40px;
     margin: 0 10px;
-    
   }
     .f4-a, .f4-b, .f4-c {
       justify-content: center;
       font-size: 11px;
-     
   }
   body {
       position: relative;
@@ -167,7 +159,6 @@
      position: absolute;
      bottom: 100px;
      right: 5px; 
-     
   }
   .strelka img {
       width: 70%;
